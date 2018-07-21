@@ -197,4 +197,32 @@ Header格式: `token`:`xxxxx`
 ```
 200  OK
 502  服务器端错误
- ``` 
+```
+
+##4 修改任务
+
+|URL|Header|Method|
+|:--|:--|:--|
+|/api/user/`<int:uid>`/`<int:gid>`/exchange/|登录Header|POST|
+
+Header格式: `token`:`xxxxx`
+
+**POST data**
+```
+{
+	"importance": int,
+	"name": string,
+	"hour": int,
+	"ddl": string,
+	"cost": int
+}
+```
+**Return data**
+```
+无
+```
+**Status Code**
+```
+200  OK
+502  服务器端错误
+```
