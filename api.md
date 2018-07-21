@@ -86,7 +86,7 @@
 
 |URL|Header|Method|
 |:--|:--|:--|
-|/api/questionaire/application/`<int:uid>`/|登录Header|POST|
+|/api/questionnaire/application/`<int:uid>`/|登录Header|POST|
 
 Header格式: token:xxxxx
  
