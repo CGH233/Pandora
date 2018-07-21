@@ -55,6 +55,7 @@
 
 #3 问卷
 
+##1 问卷展示
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/maingoal/`<int:uid>`/|无|GET|
@@ -66,7 +67,12 @@
 **Return data**
 ```
 {
-	?
+	"sgoalselection":[{
+		"name": string,
+		"sgoalid": int
+	},{
+	...
+	}] //多个固定任务供选择	
 }
 ```
 **Status Code**
@@ -75,7 +81,34 @@
 502  服务器端错误
 ``` 
 
+##2 问卷提交
+|URL|Header|Method|
+|:--|:--|:--|
+|/api/maingoal/`<int:uid>`/|无|GET|
+ 
+**POST data**
+```
+无
+``` 
+**Return data**
+```
+{
+	"sgoalselection":[{
+		       "name": string,
+			   "sgoalid": int
+	},{
+	...
+    }] //多个固定任务供选择
+}
+```
+**Status Code**
+```  
+200  OK
+502  服务器端错误
+``` 
+
 #4 个人数据
+
 ##1 状态展示
 
 |URL|Header|Method|
