@@ -55,35 +55,6 @@
 
 #3 问卷
 
-##1 问卷展示
-
-|URL|Header|Method|
-|:--|:--|:--|
-|/api/questionnaire/|无|GET|
-
-**POST data**
-```
-无
-```
-**Return data**
-```
-{
-	"sgoalselection":[{
-		"name": string,
-		"sgoalid": int
-	},{
-	...
-	}] //多个固定任务供选择	
-}
-```
-**Status Code**
-```
-200  OK
-502  服务器端错误
-``` 
-
-##2 问卷提交
-
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/questionnaire/application/`<int:uid>`/|登录Header|POST|
@@ -93,8 +64,15 @@ Header格式: token:xxxxx
 **POST data**
 ```
 {
-	"application": string,
-	"number": int //数量	
+	"number": int //数量
+	"sgoal":[{
+			"name": string,
+			"hour": int,
+			"ddl": string,
+			"importance": int	
+	},{
+	...
+	}]	
 }
 ``` 
 **Return data**
