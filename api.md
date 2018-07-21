@@ -25,6 +25,7 @@
 ```
 
 #2 用户登录
+
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/signin/|无|POST|
@@ -52,6 +53,7 @@
 
 
 #3 问卷
+
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/maingoal/`<int:uid>`/|无|GET|
@@ -73,6 +75,7 @@
 
 #4 个人数据
 ##1 状态展示
+
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/user/`<int:uid>`/detal/|登录Header|GET|
@@ -108,6 +111,7 @@ Header格式: `token`:`xxxxx`
 ``` 
 
 ##2 完成任务/取消
+
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/user/`<int:uid>`/`<int:gid>`/|登录Header|POST|
@@ -129,6 +133,7 @@ Header格式: `token`:`xxxxx`
 ``` 
 
 ##3 添加任务
+
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/user/`<int:uid>`/addition/|登录Header|POST|
