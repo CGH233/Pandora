@@ -112,7 +112,8 @@ Header格式: `token`:`xxxxx`
 		"name": string,
 		"hour": int, //每日所需时间
 		"ddl": string,
-		"result": int //完成:1 未完成:0
+		"result": int, //完成:1 未完成:0
+		"gid": int //任务id
 	},
 	{
 	...
