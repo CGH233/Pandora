@@ -93,7 +93,8 @@ Header格式: token:xxxxx
 **POST data**
 ```
 {
-	"application": string	
+	"application": string,
+	"number": int //数量	
 }
 ``` 
 **Return data**
