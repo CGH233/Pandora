@@ -170,7 +170,7 @@ Header格式: `token`:`xxxxx`
 **Return data**
 ```
 {
-	"gid":gid
+	"gid":gid 
 }
 ```
 **Status Code**
