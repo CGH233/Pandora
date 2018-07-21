@@ -56,6 +56,7 @@
 #3 问卷
 
 ##1 问卷展示
+
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/maingoal/`<int:uid>`/|无|GET|
@@ -82,6 +83,7 @@
 ``` 
 
 ##2 问卷提交
+
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/maingoal/`<int:uid>`/|无|GET|
