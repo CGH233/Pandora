@@ -59,7 +59,7 @@
 
 |URL|Header|Method|
 |:--|:--|:--|
-|/api/maingoal/`<int:uid>`/|无|GET|
+|/api/questionnaire/|无|GET|
 
 **POST data**
 ```
@@ -86,22 +86,17 @@
 
 |URL|Header|Method|
 |:--|:--|:--|
-|/api/maingoal/`<int:uid>`/|无|GET|
+|/api/questionaire/application/|无|POST|
  
 **POST data**
 ```
-无
+{
+	"application": string	
+}
 ``` 
 **Return data**
 ```
-{
-	"sgoalselection":[{
-		       "name": string,
-			   "sgoalid": int
-	},{
-	...
-    }] //多个固定任务供选择
-}
+无
 ```
 **Status Code**
 ```  
@@ -153,7 +148,7 @@ Header格式: `token`:`xxxxx`
 
 |URL|Header|Method|
 |:--|:--|:--|
-|/api/user/`<int:uid>`/`<int:gid>`/|登录Header|POST|
+|/api/user/`<int:gid>`/result/|登录Header|POST|
 
 Header格式: `token`:`xxxxx`
 
