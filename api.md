@@ -29,6 +29,7 @@
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/signin/|无|POST|
+
 **POST data(json)**
 ```
 {
@@ -57,6 +58,7 @@
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/maingoal/`<int:uid>`/|无|GET|
+
 **POST data**
 ```
 无
@@ -79,7 +81,9 @@
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/user/`<int:uid>`/detal/|登录Header|GET|
+
 Header格式: `token`:`xxxxx`
+
 **POST data**
 ```
 无
@@ -115,7 +119,9 @@ Header格式: `token`:`xxxxx`
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/user/`<int:uid>`/`<int:gid>`/|登录Header|POST|
+
 Header格式: `token`:`xxxxx`
+
 **POST data**
 ```
 {
@@ -137,7 +143,9 @@ Header格式: `token`:`xxxxx`
 |URL|Header|Method|
 |:--|:--|:--|
 |/api/user/`<int:uid>`/addition/|登录Header|POST|
+
 Header格式: `token`:`xxxxx`
+
 **POST data**
 ```
 {
