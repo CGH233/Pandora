@@ -86,7 +86,9 @@
 
 |URL|Header|Method|
 |:--|:--|:--|
-|/api/questionaire/application/|无|POST|
+|/api/questionaire/application/`<int:uid>`/|登录Header|POST|
+
+Header格式: token:xxxxx
  
 **POST data**
 ```
@@ -148,7 +150,7 @@ Header格式: `token`:`xxxxx`
 
 |URL|Header|Method|
 |:--|:--|:--|
-|/api/user/`<int:gid>`/result/|登录Header|POST|
+|/api/user/`<int:uid>`/`<int:gid>`/result/|登录Header|POST|
 
 Header格式: `token`:`xxxxx`
 
