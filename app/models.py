@@ -50,7 +50,7 @@ class User(db.Model, UserMixin):
 class PGoal(db.Model):
     __tablename__ = 'pgoals'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64), unique=True)
+    name = db.Column(db.String(64))
     hour = db.Column(db.Integer)
     ddl = db.Column(db.String(64))
     result = db.Column(db.Integer)
@@ -59,8 +59,9 @@ class PGoal(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __repr__(self):
-        return '<Goal %r>' % self.name
+        return '<PGoal %r>' % self.name
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+

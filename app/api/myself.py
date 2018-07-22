@@ -21,7 +21,7 @@ def detal(uid):
             pn = 0
             pf = 0
             for x in pgoal:
-                pgoal1 = PGoal.query.filter_by(id=x).first()
+                pgoal1 = PGoal.query.filter_by(id=x.id).first()
                 goal.append({"importance":pgoal1.importance,
                              "name":pgoal1.name,
                              "hour":pgoal1.hour,
@@ -36,12 +36,19 @@ def detal(uid):
                     pn += 1
                     if (pgoal1.result == 1):
                         pf += 1
-
-            return jsonify({"username":user.name,
+            if (sn == 0):
+                a = 0
+            else:
+                a = sf / sn
+            if (pn == 0):
+                b = 0
+            else:
+                b = pf / pn
+            return jsonify({"username":user.username,
                             "score":user.score,
-                            "sstatus":sf/sn,
-                            "pstatus":pf/pn,
-                            "time":time.strftime("%Y-%M-%D",time.localtime),
+                            "sstatus":a,
+                            "pstatus":b,
+                            "time":time.strftime("%Y-%M-%D",time.localtime()),
                             "goal":goal
                             }),200
 
@@ -56,7 +63,7 @@ def result(uid,gid):
             goal.result = result
             db.session.add(goal)
             db.session.commit()
-            return 200    
+            return jsonify(),200    
 
 @api.route('/user/<int:uid>/addition/', methods = ['POST'])
 def additoin(uid):
@@ -73,7 +80,8 @@ def additoin(uid):
                          ddl = ddl,
                          importance = importance,
                          result = 0,
-                         PorS = 0)
+                         PorS = 0,
+                         user_id = uid)
             db.session.add(goal)
             db.session.commit()
             return jsonify({"gid":goal.id}),200
@@ -96,7 +104,11 @@ def exchange(uid,gid):
             goal.importance = importance
             goal.result = 0
             goal.PorS = 0
-            user.score = int(user.score) - int(cost)
-            db.session.add(goal,user)
-            db.session.commit()
-            return 200
+            if int(user.score) >= int(cost):
+                user.score = int(user.score) - int(cost)
+                db.session.add(goal,user)
+                db.session.commit()
+                return jsonify({"message":"1"}),200
+            else:
+                return jsonify({"message":"0"}),400
+
